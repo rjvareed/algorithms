@@ -11,12 +11,11 @@ int * getDigits(int number, int base, int * arraySize){
     }while (temp != 0);
     
     int * ret = (int*)malloc( (*arraySize) * sizeof(int));
-    #define place temp
-    #define maxIndex *arraySize-1
+    
     //fill array with digits
     do{
     	//digit at place is number % base
-        ret[maxIndex-place++]=(number % base);
+        ret[*arraySize-1-temp++]=(number % base);
         number /= base;
     }while (number != 0);
     
